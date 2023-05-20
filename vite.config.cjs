@@ -1,25 +1,18 @@
 import { defineConfig } from "vite";
 const { resolve } = require('path')
-//Add env variable to check if is production or development
-
 const env = process.env;
-//Set a base route if deploying on github pages
-//env.mode = env.mode || "production";
 env.mode = env.mode || "production";
-
-console.log('Environment: ', env.mode);
-
 export default defineConfig({
   root: "./",
-  //Add base route if deployiing on production
-  base: env.mode === "production" ? "/app/" : "/",
+  //:home: En esta linea se cambia la frase /eventos-app/ por el nombre de su repositorio
+  base: env.mode === "production" ? "/examen-renta/" : "/",
   build: {
-    target: "esnext", 
+    target: "esnext", //para compatibilidad de navegadores
     outDir: "docs",
     assetsDir: "assets",
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html')
+        main: resolve(__dirname, 'index.html'),detalles: resolve(__dirname, 'detalles.html'),locations: resolve(__dirname, 'locations.html'),timeline: resolve(__dirname, 'timeline.html'),perfil: resolve(__dirname, 'perfil.html')
       }
     }
   },
