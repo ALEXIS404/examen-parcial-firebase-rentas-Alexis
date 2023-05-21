@@ -12,7 +12,7 @@ console.log('Environment: ', env.mode);
 export default defineConfig({
   root: "./",
   //Add base route if deployiing on production
-  base: env.mode === "production" ? "/app-examen-renta/" : "/",
+  base: env.mode === "production" ? "/examen-parcial-firebase-rentas-Alexis/" : "/",
   build: {
     target: "esnext",
     outDir: "docs",
