@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 const { resolve } = require('path')
-//Add env variable to check if is production or development
+///Add env variable to check if is production or development
 
 const env = process.env;
 //Set a base route if deploying on github pages
